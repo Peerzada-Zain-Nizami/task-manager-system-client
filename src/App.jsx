@@ -15,6 +15,7 @@ function App() {
   if (!isAuthenticated || !user) {
     return (
       <Routes>
+        <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
@@ -27,6 +28,7 @@ function App() {
   if (user.role === "admin") {
     return (
       <Routes>
+        <Route path="/" element={<AdminDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
@@ -35,6 +37,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/" element={<UserPage />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
